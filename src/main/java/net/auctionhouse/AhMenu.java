@@ -120,11 +120,11 @@ public class AhMenu implements InventoryHolder {
         else if (back)
             inv.setItem(47, button(Material.BARRIER, "&c", "EXIT", new String[]{"&fClick here to close", "&fthe Auctionhouse"}, "Exit"));
 
-        inv.setItem(48, button(Material.PAPER, "&c", "PREVIOUS PAGE",
+        inv.setItem(48, button(Material.RED_DYE, "&c", "PREVIOUS PAGE",
                 new String[]{"&fClick here to go", "&fto the previous page"}, "Navigate"));
-        inv.setItem(49, button(Material.CLOCK, "&b", "AUCTIONHOUSE",
-                new String[]{"&fClick here to go", "&frefresh the Auctionhouse", "&7Page &f" + (page + 1) + "&7/&f" + (maxPage + 1)}, "Refresh"));
-        inv.setItem(50, button(Material.PAPER, "&a", "NEXT PAGE",
+        inv.setItem(49, button(Material.CRAFTING_TABLE, "&b", "AUCTIONHOUSE",
+                new String[]{"&fClick here to go", "&frefresh the Auctionhouse", "&7Page &f" + (page + 1) + "&7/&f" + (maxPage + 1), "", "&7Made by &bitzblace"}, "Refresh"));
+        inv.setItem(50, button(Material.LIME_DYE, "&a", "NEXT PAGE",
                 new String[]{"&fClick here to go", "&fto the next page"}, "Navigate"));
         inv.setItem(53, named(Material.OAK_SIGN, "&a&lINFORMATION",
                 Arrays.asList("&7Description", "", "&aSell Items: &f/ah sell (price)")));

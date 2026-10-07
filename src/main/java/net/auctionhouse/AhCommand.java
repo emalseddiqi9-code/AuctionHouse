@@ -86,7 +86,7 @@ public class AhCommand implements CommandExecutor, TabCompleter {
             }
             case "help" -> {
                 if (!perm(s, "auctionhouse.help")) return true;
-                s.sendMessage(AuctionHousePlugin.color("&6&lAuctionHouse &7- Commands"));
+                s.sendMessage(AuctionHousePlugin.color("&6&lAuctionHouse &7- Commands &8(made by &bitzblace&8)"));
                 for (String[] h : HELP)
                     if (s.hasPermission(h[1]))
                         s.sendMessage(AuctionHousePlugin.color("&e/ah " + h[0] + " &7- " + h[2]));
