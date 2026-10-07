@@ -1,0 +1,51 @@
+settings:
+  default-max-auctions: 3        # overridden by permission auctionhouse.auctions.<number>
+  auction-duration-hours: 48
+  min-price: 1
+  max-price: 1000000000
+  sell-tax-percent: 5            # taken from the seller's payout
+  sold-history-days: 7           # how long /ah sold keeps entries
+  broadcast-on-sell: true
+  blacklist: [BEDROCK, BARRIER, COMMAND_BLOCK, STRUCTURE_BLOCK]
+
+triggers:
+  sign-lines: ["[AuctionHouse]", "[AH]"]   # first line of a sign (permission: auctionhouse.trigger.sign)
+  entity-tag: auctionhouse                  # /tag <entity> add auctionhouse (permission: auctionhouse.trigger.entity)
+  blocks: []                                # "world,100,64,200" (permission: auctionhouse.trigger.block)
+
+messages:
+  prefix: "&8[&6AH&8] &7"
+  no-permission: "&cYou don't have permission."
+  player-only: "&cThis command can only be used by players."
+  player-not-found: "&cPlayer not found."
+  unknown: "&cUnknown command. Use &f/ah help"
+  usage-sell: "&cUsage: &f/ah sell <price>"
+  usage-list: "&cUsage: &f/ah list <price> [count]"
+  usage-ulist: "&cUsage: &f/ah ulist <price> [count]"
+  usage-search: "&cUsage: &f/ah search <filter>"
+  usage-show: "&cUsage: &f/ah show <player>"
+  hold-item: "&cYou must hold an item in your hand."
+  invalid-price: "&cInvalid price."
+  price-range: "&cThe price must be between &f%min% &cand &f%max%&c."
+  blacklisted: "&cThis item can't be sold."
+  limit-reached: "&cYou reached your auction limit (&f%max%&c)."
+  listed: "&aYou listed &f%item% &afor &f%price%&a."
+  listed-server: "&aListed &f%count%x %item% &aas server for &f%price%&a."
+  broadcast: "&f%player% &7is selling &f%item% &7for &a%price%&7. &e/ah"
+  bought: "&aYou bought &f%item% &afor &f%price%&a."
+  sold-notify: "&f%buyer% &abought your &f%item% &afor &f%price%&a. &7(you got %payout%)"
+  join-sold: "&aYou sold &f%count% &aitem(s) while you were away. &7(/ah sold)"
+  own-auction: "&cYou can't buy your own auction."
+  no-money: "&cYou don't have enough money."
+  inventory-full: "&cNot enough space in your inventory."
+  not-available: "&cThis auction is no longer available."
+  cancelled: "&eAuction cancelled. Use &f/ah expired &eto get your item back."
+  cancelled-other: "&eAuction cancelled."
+  cancelled-all: "&eCancelled &f%count% &eauction(s). Use &f/ah return"
+  nothing: "&cNothing found."
+  returned: "&aReturned &f%count% &aitem(s)."
+  none-to-return: "&cYou have nothing to return."
+  expired-notify: "&eOne of your auctions expired. &7(/ah expired)"
+  reload: "&aConfiguration reloaded."
+  sold-line: "&7- &f%item% &7to &f%buyer% &7for &a%price% &7(%ago% ago)"
+  sold-header: "&6Recently sold:"

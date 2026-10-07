@@ -1,0 +1,30 @@
+name: AuctionHouse
+main: net.auctionhouse.AuctionHousePlugin
+version: 1.0.0
+api-version: '1.16'
+depend: [Vault]
+description: Auction house with GUI, server listings and triggers
+commands:
+  ah:
+    description: Auction house
+    aliases: [auctionhouse, auction]
+    usage: /ah help
+permissions:
+  auctionhouse.reload: {description: Reload the plugin, default: op}
+  auctionhouse.use: {description: Use /ah, default: true}
+  auctionhouse.menu: {description: Use /ah menu, default: op}
+  auctionhouse.search: {description: Use /ah search, default: true}
+  auctionhouse.help: {description: Use /ah help, default: true}
+  auctionhouse.sell: {description: Use /ah sell, default: true}
+  auctionhouse.list: {description: Use /ah list, default: op}
+  auctionhouse.ulist: {description: Use /ah ulist, default: op}
+  auctionhouse.selling: {description: Use /ah selling, default: true}
+  auctionhouse.sold: {description: Use /ah sold, default: true}
+  auctionhouse.show: {description: Use /ah show, default: op}
+  auctionhouse.expired: {description: Use /ah expired, default: true}
+  auctionhouse.cancel: {description: Use /ah cancel, default: true}
+  auctionhouse.return: {description: Use /ah return, default: true}
+  auctionhouse.cancel.others: {description: Cancel other players auctions, default: op}
+  auctionhouse.trigger.block: {description: Use block triggers, default: true}
+  auctionhouse.trigger.entity: {description: Use entity triggers, default: true}
+  auctionhouse.trigger.sign: {description: Use sign triggers, default: true}
