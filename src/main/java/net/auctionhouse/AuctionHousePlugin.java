@@ -13,6 +13,7 @@ public class AuctionHousePlugin extends JavaPlugin {
 
     private Economy economy;
     private AuctionManager manager;
+    private Webhook webhook;
 
     @Override
     public void onEnable() {
@@ -25,8 +26,10 @@ public class AuctionHousePlugin extends JavaPlugin {
         }
         economy = rsp.getProvider();
 
+        if (!getConfig().contains("webhook.mentions.sold", true)) { getConfig().options().copyDefaults(true); saveConfig(); }
         manager = new AuctionManager(this);
         manager.load();
+        webhook = new Webhook(this);
 
         AhCommand cmd = new AhCommand(this);
         PluginCommand pc = getCommand("ah");
@@ -48,6 +51,7 @@ public class AuctionHousePlugin extends JavaPlugin {
 
     public Economy economy() { return economy; }
     public AuctionManager manager() { return manager; }
+    public Webhook webhook() { return webhook; }
 
     public static String color(String s) {
         return ChatColor.translateAlternateColorCodes('&', s);

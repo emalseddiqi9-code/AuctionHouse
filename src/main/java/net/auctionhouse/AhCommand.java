@@ -189,6 +189,7 @@ public class AhCommand implements CommandExecutor, TabCompleter {
         ItemStack copy = it.clone();
         p.getInventory().setItemInMainHand(null);
         m.create(p, copy, price);
+        plugin.webhook().listed(p.getName(), copy, price);
         p.sendMessage(plugin.msg("listed", "%item%", plugin.itemName(copy), "%price%", plugin.fmt(price)));
         if (plugin.getConfig().getBoolean("settings.broadcast-on-sell", true))
             Bukkit.broadcastMessage(plugin.msg("broadcast", "%player%", p.getName(),

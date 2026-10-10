@@ -2,7 +2,7 @@ name: AuctionHouse
 main: net.auctionhouse.AuctionHousePlugin
 version: 1.0.0
 authors: [itzblace]
-api-version: '1.16'
+api-version: '1.21'
 depend: [Vault]
 description: Auction house with GUI, server listings and triggers
 commands:

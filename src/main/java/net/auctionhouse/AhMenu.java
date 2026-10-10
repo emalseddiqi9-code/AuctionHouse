@@ -123,7 +123,7 @@ public class AhMenu implements InventoryHolder {
         inv.setItem(48, button(Material.RED_DYE, "&c", "PREVIOUS PAGE",
                 new String[]{"&fClick here to go", "&fto the previous page"}, "Navigate"));
         inv.setItem(49, button(Material.CRAFTING_TABLE, "&b", "AUCTIONHOUSE",
-                new String[]{"&fClick here to go", "&frefresh the Auctionhouse", "&7Page &f" + (page + 1) + "&7/&f" + (maxPage + 1), "", "&7Made by &bitzblace"}, "Refresh"));
+                new String[]{"&fClick here to go", "&frefresh the Auctionhouse", "&7Page &f" + (page + 1) + "&7/&f" + (maxPage + 1)}, "Refresh"));
         inv.setItem(50, button(Material.LIME_DYE, "&a", "NEXT PAGE",
                 new String[]{"&fClick here to go", "&fto the next page"}, "Navigate"));
         inv.setItem(53, named(Material.OAK_SIGN, "&a&lINFORMATION",

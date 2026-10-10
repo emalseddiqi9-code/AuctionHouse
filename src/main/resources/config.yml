@@ -13,6 +13,41 @@ triggers:
   entity-tag: auctionhouse                  # /tag <entity> add auctionhouse (permission: auctionhouse.trigger.entity)
   blocks: []                                # "world,100,64,200" (permission: auctionhouse.trigger.block)
 
+# Discord webhook: Server Settings -> Integrations -> Webhooks -> New Webhook -> Copy Webhook URL
+webhook:
+  enabled: false
+  url: ""
+  username: "AuctionHouse"
+  avatar-url: ""
+  footer: "AuctionHouse - made by itzblace"
+  events:
+    listed: true       # a player puts an item into the auction house
+    sold: true         # an item is bought
+    cancelled: false   # an auction is cancelled
+    expired: false     # an auction expires
+  # Who gets pinged per event. Leave "" for no ping. Examples:
+  #   "@everyone"  "@here"  "<@&ROLE_ID>" (role)  "<@USER_ID>" (one person)
+  mentions:
+    listed: ""
+    sold: ""
+    cancelled: ""
+    expired: ""
+  titles:
+    listed: "New auction"
+    sold: "Item sold"
+    cancelled: "Auction cancelled"
+    expired: "Auction expired"
+  colors:              # decimal color of the embed bar
+    listed: 3447003
+    sold: 5763719
+    cancelled: 15548997
+    expired: 16705372
+  labels:
+    item: "Item"
+    price: "Price"
+    seller: "Seller"
+    buyer: "Buyer"
+
 messages:
   prefix: "&8[&6AH&8] &7"
   no-permission: "&cYou don't have permission."

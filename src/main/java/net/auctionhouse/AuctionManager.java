@@ -193,20 +193,21 @@ public class AuctionManager {
                         "%payout%", plugin.fmt(payout)));
             }
         }
+        plugin.webhook().sold(p.getName(), a);
         save();
         return null;
     }
 
     public void cancel(Auction a) {
         if (a.server) map.remove(a.id);
-        else if (a.status == Auction.Status.ACTIVE) a.status = Auction.Status.CANCELLED;
+        else if (a.status == Auction.Status.ACTIVE) { a.status = Auction.Status.CANCELLED; plugin.webhook().cancelled(a); }
         save();
     }
 
     public int cancelAll(UUID owner) {
         int c = 0;
         for (Auction a : all())
-            if (a.status == Auction.Status.ACTIVE && owner.equals(a.seller)) { a.status = Auction.Status.CANCELLED; c++; }
+            if (a.status == Auction.Status.ACTIVE && owner.equals(a.seller)) { a.status = Auction.Status.CANCELLED; plugin.webhook().cancelled(a); c++; }
         if (c > 0) save();
         return c;
     }
@@ -251,6 +252,7 @@ public class AuctionManager {
             Auction a = it.next();
             if (a.status == Auction.Status.ACTIVE && !a.server && a.expires > 0 && now >= a.expires) {
                 a.status = Auction.Status.EXPIRED;
+                plugin.webhook().expired(a);
                 changed = true;
                 Player sp = Bukkit.getPlayer(a.seller);
                 if (sp != null) sp.sendMessage(plugin.msg("expired-notify"));
